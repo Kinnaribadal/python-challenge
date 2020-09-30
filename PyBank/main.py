@@ -2,6 +2,7 @@ import os
 import csv
 
 analysis_csv = os.path.join("Resources", "budget_data.csv")
+results_txt = os.path.join("Analysis", "results.txt")
 
 # Lists to store data
 
@@ -49,20 +50,30 @@ with open(analysis_csv) as cvsfile:
         if previous_change < Temp_read:
             greatest_decrease = int(row[1])
             date_decrease = str(row[0])
-            
+
         Temp_read = previous_change
 
 
         
 #sums all the changes and divides it by the total changes         
 average_change = sum(net_change_list)/len(net_change_list)
+with open(results_txt, "w") as textfile:
+    total_result =  f"total is {total}\n"
+    textfile.write(total_result)
+    print (total_result)
 
-print (total)
-print (netchange)
-print (average_change)
-print (greatest_increase)
-print ("is the greatest increase and is on")
-print (date_increase)
-print (greatest_decrease) 
-print ("is the greatest decrease and is on")
-print (date_decrease)
+    netchange_result =  f"netchange is {netchange}\n"
+    textfile.write(netchange_result)
+    print (netchange_result)
+
+    average_change_result =  f"average change is {average_change}\n"
+    textfile.write(average_change_result)
+    print (average_change_result)
+
+    greatest_increase_result =  f"greatest increase is {greatest_increase} on the date {date_increase}\n"
+    textfile.write(greatest_increase_result)
+    print (greatest_increase_result)
+
+    greatest_decrease_result =  f"greatest decrease is {greatest_decrease} on the date {date_decrease}\n"
+    textfile.write(greatest_decrease_result)
+    print (greatest_decrease_result)

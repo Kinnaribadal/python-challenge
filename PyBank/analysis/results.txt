@@ -1,0 +1,5 @@
+total is 86
+netchange is 38382578
+average change is -2315.1176470588234
+greatest increase is 671099 on the date Feb-2017
+greatest decrease is 60988 on the date Dec-2016
